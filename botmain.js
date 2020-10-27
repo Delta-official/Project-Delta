@@ -54,6 +54,9 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
 
 const prefix = "s."
 
+client.on('message', async(message) => {
+    if (message.author.bot) return;
+
 if (message.content.startsWith(prefix)) {
     const args = message.content.toLowerCase().split(' ');
     const command = args.shift().slice(prefix.length);
@@ -70,5 +73,6 @@ function itsSTREAMTIME() {
 function itsYOUTUBESTREAMTIME() {
     client.channel.id.get(NEWS_ID).send(`Hey everyone, Stratzenblitz is streaming at ${activity.url}!`)
 }
+})
 
 client.login(process.env.token)
