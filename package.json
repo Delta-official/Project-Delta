@@ -1,0 +1,14 @@
+{
+  "name": "project-delta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "BotM.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Darkuss",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.4.1"
+  }
+}
