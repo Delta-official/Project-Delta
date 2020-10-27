@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 
-const client = new Discord.client()
+const client = new Discord.Client()
 client.commands = new Discord.Collection()
 
 const PD_C = fs.readdirSync("./PD_C").filter(file => file.endsWith(".js"));
