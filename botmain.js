@@ -16,7 +16,7 @@ for(const file of PD_C) {
     const command = require(`./PD_C/${file}`)
     client.commands.set(command.name, command)
 }
-
+let Lpass
 client.on('ready', () => {
     console.log("Project ∆ active, awaiting input...")
     client.user.setActivity("Stratzenblitz | s.help")
