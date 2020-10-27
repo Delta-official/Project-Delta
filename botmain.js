@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-const Token = require('/token.js')
+const Token = require('/Token.js')
 
 const client = new Discord.client()
 client.commands = new Discord.Collection()
@@ -16,3 +16,6 @@ client.on('ready', () => {
     client.user.setActivity("Stratzenblitz | s.help")
 
 })
+
+
+client.login(Token.auth)
