@@ -1,5 +1,4 @@
 const Discord = require('discord.js')
-const Token = require('/Token.js')
 
 const client = new Discord.client()
 client.commands = new Discord.Collection()
@@ -14,8 +13,13 @@ for(const file of PD_C) {
 client.on('ready', () => {
     console.log("Project ∆ active, awaiting input...")
     client.user.setActivity("Stratzenblitz | s.help")
-
+    //     /\
+    //    /  \
+    //   /    \
+    //  /      \
+    // /        \
+    // ----------
 })
 
 
-client.login(Token.auth)
+client.login(process.env.token)
