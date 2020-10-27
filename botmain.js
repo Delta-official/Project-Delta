@@ -1,6 +1,8 @@
 const Discord = require('discord.js')
 const fs = require("fs")
 
+const STRATZ_SERVER_ID = "425119272713322497";
+const LORD_ID = "196749490034573312"
 const LP_ID = '438553700492115968'
 const PATREON_ID = "425130907809218562"
 const PATREONPLUS_ID = "425902812606758922"
