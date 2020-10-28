@@ -1,6 +1,6 @@
 module.exports = {
     name: "PD_C-LP",
-    execute(messages, args) {
+    execute(message, args) {
         if(message.guild.id === STRATZ_SERVER_ID) {
             if(message.member.roles.cache.has(PATREON_ID || PATREONPLUS_ID)) {
                 member.roles.add(Lpass)

@@ -4,7 +4,7 @@ const Discord = require("discord.js")
 
 module.exports = {
     name: "PD_C-HELP",
-    execute(messages, args) {
+    execute(message, args) {
         const H_EMD = Discord.MessageEmbed()
         .setColor("#24556a")
         .setTitle("Commands")

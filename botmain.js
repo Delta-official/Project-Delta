@@ -63,10 +63,10 @@ if (message.content.startsWith(prefix)) {
     const args = message.content.toLowerCase().split(' ');
     const command = args.shift().slice(prefix.length);
     if(command === "loungepass") {
-        client.commands.get("PD_C-LP").execute(messages, args)
+        client.commands.get("PD_C-LP").execute(message, args)
     }
     if(command === "help") {
-        client.commands.get("PD_C-HELP").execute(messages, args)
+        client.commands.get("PD_C-HELP").execute(message, args)
     }
 }
 function itsSTREAMTIME() {
