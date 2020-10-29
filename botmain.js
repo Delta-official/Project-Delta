@@ -71,12 +71,12 @@ if (message.content.startsWith(prefix)) {
         client.commands.get("PD_C-HELP").execute(message, args)
     }
 }
+})
 function itsSTREAMTIME() {
     client.channel.id.get(NEWS_ID).send(`Hey <@everyone>, Stratzenblitz is streaming at ${activity.url}!`)
 }
 function itsYOUTUBESTREAMTIME() {
     client.channel.id.get(NEWS_ID).send(`Hey everyone, Stratzenblitz is streaming at ${activity.url}!`)
 }
-})
 
 client.login(process.env.token)
