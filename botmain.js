@@ -22,8 +22,6 @@ client.on('ready', () => {
     });
 })
 
-if (!message.content.startsWith(prefix) || message.author.bot) return;
-
 let canNotifyStreaming = true;
 
 client.on("presenceUpdate", (oldPresence, newPresence) => {
