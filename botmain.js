@@ -54,7 +54,7 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
  }
 });
 
-const prefix = "s."
+const prefix = "_"
 
 client.on('message', async(message) => {
     if (message.author.bot) return;
