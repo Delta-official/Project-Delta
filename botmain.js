@@ -1,15 +1,6 @@
-const Discord = require('discord.js')
 const fs = require("fs")
-
-const STRATZ_SERVER_ID = "425119272713322497";
-const LORD_ID = "196749490034573312"
-const LP_ID = '438553700492115968'
-const PATREON_ID = "425130907809218562"
-const PATREONPLUS_ID = "425902812606758922"
-const NEWS_ID = "527010080948879387"
-const TESTNEWS_ID = "771190759218348043"
-const OWNER_ID = "508632222245322793"
-const TESTSERVER_ID = "763551594334781490"
+const config = require("config.json")
+const Discord = require('discord.js')
 
 const client = new Discord.Client()
 client.commands = new Discord.Collection()
@@ -30,6 +21,8 @@ client.on('ready', () => {
         Lpass = stratzGuild.roles.cache.find(Lpass => Lpass.id === "438553700492115968");
     });
 })
+
+if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 let canNotifyStreaming = true;
 
