@@ -7,7 +7,9 @@ const LP_ID = '438553700492115968'
 const PATREON_ID = "425130907809218562"
 const PATREONPLUS_ID = "425902812606758922"
 const NEWS_ID = "527010080948879387"
-
+const TESTNEWS_ID = "771190759218348043"
+const OWNER_ID = "508632222245322793"
+const TESTSERVER_ID = "763551594334781490"
 
 const client = new Discord.Client()
 client.commands = new Discord.Collection()
@@ -31,6 +33,28 @@ client.on('ready', () => {
 
 let canNotifyStreaming = true;
 
+client.on("presenceUpdate", (oldPresence, newPresence) => {
+    if(newPresence.user.id === OWNER_ID) {
+    if(newPresence.guild.id === TESTSERVER_ID) {
+    if (!newPresence.activities) return false;
+    newPresence.activities.forEach(activity => {
+        if (activity.type == "STREAMING") {
+            if (canNotifyStreaming) {
+                if(activity.url.startsWith("www.youtube.com")) {
+                    itsYOUTUBESTREAMTIMET();
+                    canNotifyStreaming = false;
+                    setTimeout(() => { canNotifyStreaming = true; }, 86400000);
+                } else if(activity.url.startsWith("www.twitch.tv")) {
+                    itsSTREAMTIMET();
+                    canNotifyStreaming = false;
+                    setTimeout(() => { canNotifyStreaming = true; }, 86400000);
+                }
+            }
+        };
+    });
+   }
+ }
+});
 client.on("presenceUpdate", (oldPresence, newPresence) => {
     if(newPresence.user.id === LORD_ID) {
     if(newPresence.guild.id === STRATZ_SERVER_ID) {
@@ -74,6 +98,12 @@ function itsSTREAMTIME() {
 }
 function itsYOUTUBESTREAMTIME() {
     client.channel.id.get(NEWS_ID).send(`Hey everyone, Stratzenblitz is streaming at ${activity.url}!`)
+}
+function itsSTREAMTIME_T() {
+    client.channel.id.get(TESTNEWS_ID).send(`Hey <@everyone>, Stratzenblitz is streaming at ${activity.url}!`)
+}
+function itsYOUTUBESTREAMTIME_T() {
+    client.channel.id.get(TESTNEWS_ID).send(`Hey everyone, Stratzenblitz is streaming at ${activity.url}!`)
 }
 })
 
