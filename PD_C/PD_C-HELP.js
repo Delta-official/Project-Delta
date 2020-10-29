@@ -10,7 +10,7 @@ module.exports = {
         .setTitle("Commands")
         .setAuthor("Darkuss#9279")
         .addFields(
-            { name: "loungepass", value: "Gives you Lounge Pass if you have any of the patreon roles"}
+            { name: "loungepass", value: "Gives you Lounge Pass if you have any of the Patreon roles", inline: true}
         )
         message.channel.send(H_EMD)
     }
