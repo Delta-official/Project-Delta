@@ -17,7 +17,7 @@ client.on('ready', () => {
     client.user.setActivity("Stratzenblitz | s.help")
     
     // just a comment
-    client.guilds.fetch(STRATZ_SERVER_ID).then((stratzGuild) => {
+    client.guilds.fetch(config.STRATZ_SERVER_ID).then((stratzGuild) => {
         Lpass = stratzGuild.roles.cache.find(Lpass => Lpass.id === "438553700492115968");
     });
 })
