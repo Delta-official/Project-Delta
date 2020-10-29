@@ -1,5 +1,5 @@
 const fs = require("fs")
-const config = require("config.json")
+const config = require("./PD_C/config.json")
 const Discord = require('discord.js')
 
 const client = new Discord.Client()
@@ -27,8 +27,8 @@ if (!message.content.startsWith(prefix) || message.author.bot) return;
 let canNotifyStreaming = true;
 
 client.on("presenceUpdate", (oldPresence, newPresence) => {
-    if(newPresence.user.id === LORD_ID) {
-    if(newPresence.guild.id === STRATZ_SERVER_ID) {
+    if(newPresence.user.id === config.LORD_ID) {
+    if(newPresence.guild.id === config.STRATZ_SERVER_ID) {
     if (!newPresence.activities) return false;
     newPresence.activities.forEach(activity => {
         if (activity.type == "STREAMING") {
@@ -66,10 +66,10 @@ if (message.content.startsWith(prefix)) {
 }
 })
 function itsSTREAMTIME() {
-    client.channel.id.get(NEWS_ID).send(`Hey <@everyone>, Stratzenblitz is streaming at ${activity.url}!`)
+    client.channel.id.get(config.NEWS_ID).send(`Hey <@everyone>, Stratzenblitz is streaming at ${activity.url}!`)
 }
 function itsYOUTUBESTREAMTIME() {
-    client.channel.id.get(NEWS_ID).send(`Hey everyone, Stratzenblitz is streaming at ${activity.url}!`)
+    client.channel.id.get(config.NEWS_ID).send(`Hey everyone, Stratzenblitz is streaming at ${activity.url}!`)
 }
 
 client.login(process.env.token)

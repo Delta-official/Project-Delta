@@ -12,5 +12,6 @@ module.exports = {
         .addFields(
             { name: "loungepass", value: "Gives you Lounge Pass if you have any of the patreon roles"}
         )
+        message.channel.send(H_EMD)
     }
 }
