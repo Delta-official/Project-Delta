@@ -34,28 +34,6 @@ client.on('ready', () => {
 let canNotifyStreaming = true;
 
 client.on("presenceUpdate", (oldPresence, newPresence) => {
-    if(newPresence.user.id === OWNER_ID) {
-    if(newPresence.guild.id === TESTSERVER_ID) {
-    if (!newPresence.activities) return false;
-    newPresence.activities.forEach(activity => {
-        if (activity.type == "STREAMING") {
-            if (canNotifyStreaming) {
-                if(activity.url.startsWith("www.youtube.com")) {
-                    itsYOUTUBESTREAMTIMET();
-                    canNotifyStreaming = false;
-                    setTimeout(() => { canNotifyStreaming = true; }, 86400000);
-                } else if(activity.url.startsWith("www.twitch.tv")) {
-                    itsSTREAMTIMET();
-                    canNotifyStreaming = false;
-                    setTimeout(() => { canNotifyStreaming = true; }, 86400000);
-                }
-            }
-        };
-    });
-   }
- }
-});
-client.on("presenceUpdate", (oldPresence, newPresence) => {
     if(newPresence.user.id === LORD_ID) {
     if(newPresence.guild.id === STRATZ_SERVER_ID) {
     if (!newPresence.activities) return false;
@@ -98,12 +76,6 @@ function itsSTREAMTIME() {
 }
 function itsYOUTUBESTREAMTIME() {
     client.channel.id.get(NEWS_ID).send(`Hey everyone, Stratzenblitz is streaming at ${activity.url}!`)
-}
-function itsSTREAMTIME_T() {
-    client.channel.id.get(TESTNEWS_ID).send(`Hey <@everyone>, Stratzenblitz is streaming at ${activity.url}!`)
-}
-function itsYOUTUBESTREAMTIME_T() {
-    client.channel.id.get(TESTNEWS_ID).send(`Hey everyone, Stratzenblitz is streaming at ${activity.url}!`)
 }
 })
 
