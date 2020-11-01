@@ -1,3 +1,12 @@
+//                                                                  
+// ,adPPYba,  88,dPYba,,adPYba,   ,adPPYba,  ,adPPYb,d8 ,adPPYYba,  
+// a8"     "8a 88P'   "88"    "8a a8P_____88 a8"    `Y88 ""     `Y8  
+// 8b       d8 88      88      88 8PP""""""" 8b       88 ,adPPPPP88  
+// "8a,   ,a8" 88      88      88 "8b,   ,aa "8a,   ,d88 88,    ,88  
+//  `"YbbdP"'  88      88      88  `"Ybbd8"'  `"YbbdP"Y8 `"8bbdP"Y8  
+//                                            aa,    ,88             
+//                                             "Y8bbdP"         
+
 const fs = require("fs")
 const config = require("./PD_C/config.json")
 const Discord = require('discord.js')
