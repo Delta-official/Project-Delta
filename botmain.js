@@ -63,7 +63,7 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
                 if(newPresence.status === "online") {
                     member.guild.channel.cache.get("772288906200481813").send("<@508632222245322793> Bot is online!")
                 }
-                if(newPresence.status === "offilen") {
+                if(newPresence.status === "offline") {
                     member.guild.channel.cache.get("772288906200481813").send("<@508632222245322793> Bot is offline")
                 }
             }
