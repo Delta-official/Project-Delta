@@ -56,6 +56,21 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
  }
 });
 
+client.on("presenceUpdate", (oldPresence, newPresence) => {
+    if(newPresence.user.id === config.MB_ID) {
+        if(newPresence.server.id === config.DEVSER_ID) {
+            if (oldPresence.status !== newPresence.status) {
+                if(newPresence.status === "online") {
+                    member.guild.channel.cache.get("772288906200481813").send("<@508632222245322793> Bot is online!")
+                }
+                if(newPresence.status === "offilen") {
+                    member.guild.channel.cache.get("772288906200481813").send("<@508632222245322793> Bot is offline")
+                }
+            }
+        }
+    }
+});
+
 const prefix = "s."
 
 client.on('message', async(message) => {
