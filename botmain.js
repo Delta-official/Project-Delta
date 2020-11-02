@@ -85,18 +85,6 @@ if (message.content.startsWith(prefix)) {
     if(command === "help") {
         client.commands.get("PD_C-HELP").execute(message, args)
     }
-    if(command ===  "banlist") {
-    message.guild.fetchBans()
-    .then(banned => {
-    let list = banned.map(user => user.tag).join('\n');
-
-    // Make sure if the list is too long to fit in one message, you cut it off appropriately.
-    if (list.length >= 1950) list = `${list.slice(0, 1948)}...`;
-
-    message.channel.send(`**${banned.size} users are banned:**\n${list}`);
-    })
-    .catch(console.error);
-    }
 }
 })
 function itsSTREAMTIME() {
