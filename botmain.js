@@ -35,6 +35,8 @@ client.on("guildMemberUpdate", (oldMember, newMember) => {
         if(newMember.roles.cache.has(config.PATREON_ID) || newMember.roles.cache.has(config.PATREONPLUS_ID)) {
             newMember.roles.add(Lpass)
             client.channels.cache.get("425119273313370123").send(`Welcome to the Stratzen Lounge ${newMember.displayName}!\nTake a seat in one of our bean bags or grab a soda or cookies from our vending machines.`)
+        } else if(newMember.roles.cache.has(Lpass)) {
+            client.channels.cache.get("425119273313370123").send("Thank you for supporting Stratzenblitz again!")
         }
     }
 })
@@ -87,9 +89,6 @@ client.on('message', async(message) => {
 if (message.content.startsWith(prefix)) {
     const args = message.content.toLowerCase().split(' ');
     const command = args.shift().slice(prefix.length);
-    if(command === "loungepass") {
-        client.commands.get("PD_C-LP").execute(message, args)
-    }
     if(command === "help") {
         client.commands.get("PD_C-HELP").execute(message, args)
     }
