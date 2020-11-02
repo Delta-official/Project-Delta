@@ -31,12 +31,12 @@ client.on('ready', () => {
     });
 })
 client.on("guildMemberUpdate", (oldMember, newMember) => {
-    client.channels.id.get(config.TESTNEWS_ID).send("Check 1")
-    if(newMember.guild.id === config.STRATZ_SERVER_ID) {
-        client.channels.id.get(config.TESTNEWS_ID).send("Check 2")
+    client.channels.cache.get(config.TESTNEWS_ID).send("Check 1")
+    if(newMember.guild.cache === config.STRATZ_SERVER_ID) {
+        client.channels.cache.get(config.TESTNEWS_ID).send("Check 2")
         if(newMember.roles.cache.has(config.PATREON_ID) || newMember.roles.cache.has(config.PATREONPLUS_ID)) {
             newMember.roles.add(config.Lpass)
-            client.channels.id.get("425119273313370123").send(`Welcome to the Stratzen Lounge ${newMember.name}!\nTake a seat in one of our bean bags or grab a soda or cookies from our vending machines.`)
+            client.channels.cache.get("425119273313370123").send(`Welcome to the Stratzen Lounge ${newMember.name}!\nTake a seat in one of our bean bags or grab a soda or cookies from our vending machines.`)
         }
     }
 })
