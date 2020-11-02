@@ -32,7 +32,7 @@ client.on('ready', () => {
 })
 client.on("guildMemberUpdate", (oldMember, newMember) => {
     client.channels.cache.get(config.TESTNEWS_ID).send("Check 1")
-    if(newMember.guild.cache === config.STRATZ_SERVER_ID) {
+    if(newMember.guild.id === config.STRATZ_SERVER_ID) {
         client.channels.cache.get(config.TESTNEWS_ID).send("Check 2")
         if(newMember.roles.cache.has(config.PATREON_ID) || newMember.roles.cache.has(config.PATREONPLUS_ID)) {
             newMember.roles.add(config.Lpass)
