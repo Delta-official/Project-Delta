@@ -30,6 +30,14 @@ client.on('ready', () => {
         Lpass = stratzGuild.roles.cache.find(Lpass => Lpass.id === "438553700492115968");
     });
 })
+client.on("guildMemberUpdate", (oldMember, newMember) => {
+    if(newMember.guild.id === config.STRATZ_SERVER_ID) {
+        if(newMember.roles.cache.has(config.PATREON_ID || config.PATREONPLUS_ID)) {
+            newMember.roles.add(config.Lpass)
+            client.guild.channel.id.get("425119273313370123").send(`Welcome to the Stratzen Lounge ${newMember.name}!\nTake a seat in one of our bean bags or grab a soda from our vending machine. `)
+        }
+    }
+})
 
 let canNotifyStreaming = true;
 
@@ -61,10 +69,10 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
         if(newPresence.server.id === config.DEVSER_ID) {
             if (oldPresence.status !== newPresence.status) {
                 if(newPresence.status === "online") {
-                    member.guild.channel.cache.get("772288906200481813").send("<@508632222245322793> Bot is online!")
+                    client.guild.channel.id.get("772288906200481813").send("<@508632222245322793> Bot is online!")
                 }
                 if(newPresence.status === "offline") {
-                    member.guild.channel.cache.get("772288906200481813").send("<@508632222245322793> Bot is offline")
+                    client.guild.channel.id.get("772288906200481813").send("<@508632222245322793> Bot is offline")
                 }
             }
         }
