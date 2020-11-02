@@ -36,7 +36,7 @@ client.on("guildMemberUpdate", (oldMember, newMember) => {
         client.channels.cache.get(config.TESTNEWS_ID).send("Check 2")
         if(newMember.roles.cache.has(config.PATREON_ID) || newMember.roles.cache.has(config.PATREONPLUS_ID)) {
             newMember.roles.add(Lpass)
-            //client.channels.cache.get("425119273313370123").send(`Welcome to the Stratzen Lounge ${newMember.displayName}!\nTake a seat in one of our bean bags or grab a soda or cookies from our vending machines.`)
+            client.channels.cache.get("425119273313370123").send(`Welcome to the Stratzen Lounge ${newMember.displayName}!\nTake a seat in one of our bean bags or grab a soda or cookies from our vending machines.`)
         }
     }
 })
