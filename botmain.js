@@ -93,7 +93,7 @@ if (message.content.startsWith(prefix)) {
         client.commands.get("PD_C-HELP").execute(message, args)
     }
     if(command === "patronlist") {
-        client.command.get("PD_C-PATLIST").execute(message, args)
+        client.commands.get("PD_C-PATLIST").execute(message, args)
     }
 }
 })
