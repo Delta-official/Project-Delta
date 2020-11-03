@@ -6,9 +6,9 @@ module.exports = {
         const H_EMD = new Discord.MessageEmbed()
         .setColor("#24556a")
         .setTitle("Commands")
-        .setAuthor("Darkuss#9279")
+        .setDescription("Bot made by Darkuss")
         .addFields(
-            { name: "loungepass", value: "Gives you Lounge Pass if you have any of the Patreon roles", inline: true}
+            { name: "patronlist", value: "Gives you Lounge Pass if you have any of the Patreon roles", inline: true}
         )
         message.channel.send(H_EMD)
     }
