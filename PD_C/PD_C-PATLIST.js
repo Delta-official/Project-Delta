@@ -5,9 +5,7 @@ module.exports = {
     execute(message, args) {
         var PAT_L = message.guild.roles.get(config.PATREON_ID).members.map(m=>m.user.tag).join("\n")
         var PATplus_L = message.guild.roles.get(config.PATREONPLUS_ID).members.map(m=>m.user.tag).join("\n")
-        message.channel.send(`**PATREON LIST**\n${PAT_L}`) .then(() => {
-            message.channel.send(`**PATREON+ LIST**\n${PATplus_L}`)
-        });
-        
+        message.channel.send(`**PATREON LIST**\n${PAT_L}`)
+        message.channel.send(`**PATREON+ LIST**\n${PATplus_L}`)
     }
 }
