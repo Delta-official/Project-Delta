@@ -8,7 +8,7 @@ module.exports = {
         .setTitle("Commands")
         .setDescription("Bot made by Darkuss")
         .addFields(
-            { name: "patronlist", value: "Gives you Lounge Pass if you have any of the Patreon roles", inline: true}
+            { name: "patronlist", value: "Lists all patreon members", inline: true}
         )
         message.channel.send(H_EMD)
     }
