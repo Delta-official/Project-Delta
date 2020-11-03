@@ -71,10 +71,10 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
         if(newPresence.server.id === config.DEVSER_ID) {
             if (oldPresence.status !== newPresence.status) {
                 if(newPresence.status === "online") {
-                    client.guild.channel.id.get("772288906200481813").send("<@508632222245322793> Bot is online!")
+                    client.guild.channels.id.get("772288906200481813").send("<@508632222245322793> Bot is online!")
                 }
                 if(newPresence.status === "offline") {
-                    client.guild.channel.id.get("772288906200481813").send("<@508632222245322793> Bot is offline")
+                    client.guild.channels.id.get("772288906200481813").send("<@508632222245322793> Bot is offline")
                 }
             }
         }
