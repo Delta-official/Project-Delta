@@ -45,6 +45,7 @@ client.on("guildMemberUpdate", (oldMember, newMember) => {
 })
 
 let canNotifyStreaming = true;
+let canPNotifyStreaming = true;
 
 client.on("presenceUpdate", (oldPresence, newPresence) => {
     if(newPresence.user.id === config.LORD_ID) {
@@ -60,6 +61,29 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
                 } else if(activity.url.startsWith("www.twitch.tv")) {
                     itsSTREAMTIME();
                     canNotifyStreaming = false;
+                    setTimeout(() => { canNotifyStreaming = true; }, 86400000);
+                }
+            }
+        };
+    });
+   }
+ }
+});
+
+client.on("presenceUpdate", (oldPresence, newPresence) => {
+    if(newPresence.user.id === config.OWNER_ID) {
+    if(newPresence.guild.id === config.DEVSER_ID) {
+    if (!newPresence.activities) return false;
+    newPresence.activities.forEach(activity => {
+        if (activity.type == "STREAMING") {
+            if (canNotifyStreaming) {
+                if(activity.url.startsWith("www.youtube.com")) {
+                    itsPYOUTUBESTREAMTIME();
+                    canPNotifyStreaming = false;
+                    setTimeout(() => { canNotifyStreaming = true; }, 86400000);
+                } else if(activity.url.startsWith("www.twitch.tv")) {
+                    itsPSTREAMTIME();
+                    canPNotifyStreaming = false;
                     setTimeout(() => { canNotifyStreaming = true; }, 86400000);
                 }
             }
@@ -106,6 +130,13 @@ function itsSTREAMTIME() {
 function itsYOUTUBESTREAMTIME() {
     client.channel.id.get(config.NEWS_ID).send(`Hey everyone, Stratzenblitz is streaming at ${activity.url}!`)
 }
+function itsPSTREAMTIME() {
+    client.channel.id.get(config.TESTNEWS_ID).send(`Hey <@508632222245322793>, Stratzenblitz is streaming at ${activity.url}!`)
+}
+function itsPYOUTUBESTREAMTIME() {
+    client.channel.id.get(config.TESTNEWS_ID).send(`Hey everyone, Stratzenblitz is streaming at ${activity.url}!`)
+}
+
 function isPatron(member) {
     return member.roles.cache.has(config.PATREON_ID) || member.roles.cache.has(config.PATREONPLUS_ID);
 }
