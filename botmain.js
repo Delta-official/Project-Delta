@@ -30,7 +30,9 @@ client.on('ready', () => {
         Lpass = stratzGuild.roles.cache.find(Lpass => Lpass.id === "438553700492115968");
     });
 })
+
 client.on("guildMemberUpdate", (oldMember, newMember) => {
+    if (isPatron(newMember) && !isPatron(oldMember)) {
     if(newMember.guild.id === config.STRATZ_SERVER_ID) {
         if(newMember.roles.cache.has(config.PATREON_ID) || newMember.roles.cache.has(config.PATREONPLUS_ID)) {
             newMember.roles.add(Lpass)
@@ -38,6 +40,7 @@ client.on("guildMemberUpdate", (oldMember, newMember) => {
         } else if(newMember.roles.cache.has(Lpass)) {
             client.channels.cache.get("425119273313370123").send("Thank you for supporting Stratzenblitz again!")
         }
+    }
     }
 })
 
@@ -102,6 +105,9 @@ function itsSTREAMTIME() {
 }
 function itsYOUTUBESTREAMTIME() {
     client.channel.id.get(config.NEWS_ID).send(`Hey everyone, Stratzenblitz is streaming at ${activity.url}!`)
+}
+function isPatron(member) {
+    return member.roles.cache.has(config.PATREON_ID) || member.roles.cache.has(config.PATREONPLUS_ID);
 }
 
 client.login(process.env.token)
