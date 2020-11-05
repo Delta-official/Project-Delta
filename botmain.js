@@ -9,6 +9,7 @@
 
 const fs = require("fs")
 const config = require("./PD_C/config.json")
+const BIRD_LIST = require("./PD_C/birdlist.json")
 const Discord = require('discord.js')
 
 const client = new Discord.Client()
@@ -100,7 +101,7 @@ if (message.content.startsWith(prefix)) {
         client.commands.get("PD_C-PATLIST").execute(message, args)
     }
     if(command === "bird") {
-        message.channel.send("https://source.unsplash.com/1600x900/?bird")
+        message.channel.send(BIRD_LIST[Math.floor(Math.random() * BIRD_LIST.length)])
     }
 }
 })
