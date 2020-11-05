@@ -99,6 +99,9 @@ if (message.content.startsWith(prefix)) {
     if(command === "patronlist") {
         client.commands.get("PD_C-PATLIST").execute(message, args)
     }
+    if(command === "bird") {
+        message.channel.send("https://source.unsplash.com/1600x900/?bird")
+    }
 }
 })
 function itsSTREAMTIME() {
