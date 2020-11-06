@@ -33,7 +33,8 @@ let BIRD_LIST = [
     "https://cdn.discordapp.com/attachments/733968268867403796/774279931735441468/unknown.png",
     "https://cdn.discordapp.com/attachments/733968268867403796/774280579155492894/unknown.png",
     "https://cdn.discordapp.com/attachments/733968268867403796/774281662217453578/unknown.png",
-    "https://cdn.discordapp.com/attachments/733968268867403796/774284048733306920/unknown.png"
+    "https://cdn.discordapp.com/attachments/733968268867403796/774284048733306920/unknown.png",
+    "https://cdn.discordapp.com/attachments/527012837055266837/774284540297609276/unknown.png"
     ]
 
 const client = new Discord.Client()
