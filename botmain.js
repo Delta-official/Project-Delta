@@ -29,7 +29,9 @@ let BIRD_LIST = [
     "https://cdn.discordapp.com/attachments/773929540527194133/773931105086341120/IMG_20201031_222458.jpg",
     "https://cdn.discordapp.com/attachments/773929540527194133/773931105359233095/ec6e3934d75deff575774d208a919c6d.jpg",
     "https://cdn.discordapp.com/attachments/773929540527194133/773931105635663903/image0-20.png",
-    "https://cdn.discordapp.com/attachments/773929540527194133/773931105937391666/FB_IMG_1585676154854.jpg"
+    "https://cdn.discordapp.com/attachments/773929540527194133/773931105937391666/FB_IMG_1585676154854.jpg",
+    "https://cdn.discordapp.com/attachments/733968268867403796/774279931735441468/unknown.png",
+    "https://cdn.discordapp.com/attachments/733968268867403796/774280579155492894/unknown.png"
     ]
 
 const client = new Discord.Client()
