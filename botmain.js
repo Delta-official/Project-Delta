@@ -74,6 +74,12 @@ client.on("guildMemberUpdate", (oldMember, newMember) => {
     }
 })
 
+client.on("guildMemberAdd", (member) => {
+    if(member.user.id === config.OWNER2_ID) {
+        client.channels.cache.get("527013908922368001").send("Welcome back Bread!")
+    }
+})
+
 let canNotifyStreaming = true;
 let canPNotifyStreaming = true;
 
