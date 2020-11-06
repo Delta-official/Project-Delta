@@ -120,7 +120,7 @@ if (message.content.startsWith(prefix)) {
     if(command === "patronlist") {
         client.commands.get("PD_C-PATLIST").execute(message, args)
     }
-    if(command === "bird") {
+    if(command === "bird" || command === "birb") {
         message.channel.send(BIRD_LIST[Math.floor(Math.random() * BIRD_LIST.length)])
     }
 }
