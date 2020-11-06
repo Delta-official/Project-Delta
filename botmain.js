@@ -57,7 +57,7 @@ client.on("guildMemberUpdate", (oldMember, newMember) => {
     if(newMember.guild.id === config.STRATZ_SERVER_ID) {
         if(newMember.roles.cache.has(config.PATREON_ID) || newMember.roles.cache.has(config.PATREONPLUS_ID)) {
             newMember.roles.add(Lpass)
-            client.channels.cache.get("425119273313370123").send(`Welcome to the Stratzen Lounge ${newMember.displayName}!\nTake a seat in one of our bean bags or grab a soda or cookies from our vending machines.`)
+            client.channels.cache.get("425119273313370123").send(`Welcome to the Stratzen Lounge ${newMember.displayName}!\nTake a seat in one of our bean bags or grab a soda or cookies from our vending machines. ᴰᵃʳᵏᵘˢˢ ʷᵉˡᶜᵒᵐᵉˢ ʸᵒᵘ ᵗᵒᵒ`)
         } else if(newMember.roles.cache.has(Lpass)) {
             client.channels.cache.get("425119273313370123").send("Thank you for supporting Stratzenblitz again!")
         }
