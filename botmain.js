@@ -108,7 +108,7 @@ if (message.content.startsWith(prefix)) {
         client.commands.get("PD_C-PATLIST").execute(message, args)
     }
     if(command === "bird" || command === "birb") {
-        message.channel.send(BIRD_LIST[Math.floor(Math.random() * BIRD_LIST.length)])
+        message.channel.send(`birb\r${BIRD_LIST[Math.floor(Math.random() * BIRD_LIST.length)]}`)
     }
     if(command === "allowstreamnotify") {
         if(IsOwner(member)) {
