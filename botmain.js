@@ -106,7 +106,7 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
  }
 });
 
-client.on("presenceUpdate", (oldPresence, newPresence) => {
+/*client.on("presenceUpdate", (oldPresence, newPresence) => {
     if(newPresence.user.id === config.MB_ID) {
         if(newPresence.server.id === config.DEVSER_ID) {
             if (oldPresence.status !== newPresence.status) {
@@ -119,7 +119,7 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
             }
         }
     }
-});
+});*/
 
 const prefix = "s."
 
