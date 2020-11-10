@@ -84,17 +84,24 @@ let canNotifyStreaming = true;
 let canPNotifyStreaming = true;
 
 client.on("presenceUpdate", (oldPresence, newPresence) => {
+    console.log("Check 1 passed")
     if(newPresence.user.id === config.LORD_ID) {
+        console.log("Check 2 passed")
     if(newPresence.guild.id === config.STRATZ_SERVER_ID) {
+        console.log("Check 3 passed")
     if (!newPresence.activities) return false;
     newPresence.activities.forEach(activity => {
         if (activity.type == "STREAMING") {
+            console.log("Check 4 passed")
             if (canNotifyStreaming) {
+                console.log("Check 5 passed")
                 if(activity.url.startsWith("www.youtube.com")) {
+                    console.log("Final check passed")
                     itsYOUTUBESTREAMTIME();
                     canNotifyStreaming = false;
                     setTimeout(() => { canNotifyStreaming = true; }, 86400000);
                 } else if(activity.url.startsWith("www.twitch.tv")) {
+                    console.log("Final check for twitch passed")
                     itsSTREAMTIME();
                     canNotifyStreaming = false;
                     setTimeout(() => { canNotifyStreaming = true; }, 86400000);
