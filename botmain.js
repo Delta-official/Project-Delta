@@ -140,6 +140,8 @@ if (message.content.startsWith(prefix)) {
     }
     if(command === "allowstreamnotify") {
         canNotifyStreaming = true
+        console.log(canNotifyStreaming)
+        message.channel.send("canNotifyStreaming is set to true")
     }
 }
 })
