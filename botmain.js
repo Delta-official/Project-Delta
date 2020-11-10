@@ -120,10 +120,10 @@ if (message.content.startsWith(prefix)) {
 }
 })
 function itsSTREAMTIME() {
-    client.channesl.cache.get(config.NEWS_ID).send(`Hey <@everyone>, Stratzenblitz is streaming at ${activity.url}!`)
+    client.channels.cache.get(config.NEWS_ID).send(`Hey <@everyone>, Stratzenblitz is streaming at ${activity.url}!`)
 }
 function itsYOUTUBESTREAMTIME() {
-    client.channels.cache.get(config.NEWS_ID).send(`Hey everyone, Stratzenblitz is streaming at ${activity.url}!`)
+    client.channels.cache.get(config.NEWS_ID).send(`Hey everyone, Stratzenblitz is streaming at ${Discord.Activity.url}!`)
 }
 function isPatron(member) {
     return member.roles.cache.has(config.PATREON_ID) || member.roles.cache.has(config.PATREONPLUS_ID);
