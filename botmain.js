@@ -88,8 +88,8 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
         console.log("Check 2 passed")
     if(newPresence.guild.id === config.STRATZ_SERVER_ID) {
         console.log("Check 3 passed")
-    if (!newPresence.activities) return false;
-    newPresence.activities.forEach(activity => {
+        if (newPresence.activities) {
+            newPresence.activities.forEach(activity => {
         if (activity.type == "STREAMING") {
             console.log("Check 4 passed")
             if (canNotifyStreaming) {
@@ -109,7 +109,8 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
         };
     });
    }
- }
+}
+}
 });
 
 /*client.on("presenceUpdate", (oldPresence, newPresence) => {
