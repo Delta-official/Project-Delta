@@ -12,7 +12,7 @@ const config = require("./PD_C/config.json")
 const Discord = require('discord.js')
 const BIRD_LINKS = require("./Bird links.json")
 
-let BIRD_LIST = []
+let BIRD_LIST = [BIRD_LINKS]
 
 const client = new Discord.Client()
 client.commands = new Discord.Collection()
