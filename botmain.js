@@ -67,17 +67,9 @@ client.on("presenceUpdate", (oldPresence, newPresence) => {
             console.log("Check 4 passed")
             if (canNotifyStreaming) {
                 console.log("Check 5 passed")
-                if(activity.url.startsWith("www.youtube.com")) {
-                    console.log("Final check passed")
-                    itsYOUTUBESTREAMTIME();
-                    canNotifyStreaming = false;
-                    setTimeout(() => { canNotifyStreaming = true; }, 86400000);
-                } else if(activity.url.startsWith("www.twitch.tv")) {
-                    console.log("Final check for twitch passed")
-                    itsSTREAMTIME();
-                    canNotifyStreaming = false;
-                    setTimeout(() => { canNotifyStreaming = true; }, 86400000);
-                }
+                itsYOUTUBESTREAMTIME();
+                canNotifyStreaming = false;
+                setTimeout(() => { canNotifyStreaming = true; }, 86400000);
             }
         };
     });
@@ -119,9 +111,11 @@ if (message.content.startsWith(prefix)) {
         message.channel.send(BIRD_LIST[Math.floor(Math.random() * BIRD_LIST.length)])
     }
     if(command === "allowstreamnotify") {
+        if(IsOwner(member)) {
         canNotifyStreaming = true
         console.log(canNotifyStreaming)
         message.channel.send("canNotifyStreaming is set to true")
+        }
     }
 }
 })
@@ -133,6 +127,9 @@ function itsYOUTUBESTREAMTIME() {
 }
 function isPatron(member) {
     return member.roles.cache.has(config.PATREON_ID) || member.roles.cache.has(config.PATREONPLUS_ID);
+}
+function IsOwner(member) {
+    return member.id === OWNER_ID || OWNER2_ID;
 }
 
 client.login(process.env.token)
