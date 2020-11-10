@@ -84,7 +84,6 @@ let canNotifyStreaming = true;
 let canPNotifyStreaming = true;
 
 client.on("presenceUpdate", (oldPresence, newPresence) => {
-    console.log("Check 1 passed")
     if(newPresence.user.id === config.LORD_ID) {
         console.log("Check 2 passed")
     if(newPresence.guild.id === config.STRATZ_SERVER_ID) {
