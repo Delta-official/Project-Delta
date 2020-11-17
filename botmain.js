@@ -39,7 +39,7 @@ client.on("guildMemberUpdate", (oldMember, newMember) => {
     if(newMember.guild.id === config.STRATZ_SERVER_ID) {
         if(newMember.roles.cache.has(config.PATREON_ID) || newMember.roles.cache.has(config.PATREONPLUS_ID)) {
             newMember.roles.add(Lpass)
-            setTimeout()
+            welcometothekoolgang()
         } else if(newMember.roles.cache.has(Lpass)) {
             client.channels.cache.get("425119273313370123").send("Thank you for supporting Stratzenblitz again!")
         }
@@ -125,8 +125,8 @@ function itsSTREAMTIME() {
 function itsYOUTUBESTREAMTIME() {
     client.channels.cache.get(config.NEWS_ID).send(`Hey everyone, Stratzenblitz is streaming at ${Discord.Activity.url}!`)
 }
-function wait20sec() {
-    client.channels.cache.get("425119273313370123").send(`Welcome to the Stratzen Lounge ${newMember.displayName}!\nTake a seat in of our bean bags or grab a soda or cookies from our vending machines. ᴰᵃʳᵏᵘˢˢ ʷᵉˡᶜᵒᵐᵉˢ ʸᵒᵘ ᵗᵒᵒ`)
+function welcometothekoolgang() {
+    client.channels.cache.get("425119273313370123").send(`Welcome to the Stratzen Lounge <${newMember.id}>!\nTake a seat in of our bean bags or grab a soda or cookies from our vending machines. ᴰᵃʳᵏᵘˢˢ ʷᵉˡᶜᵒᵐᵉˢ ʸᵒᵘ ᵗᵒᵒ`)
 }
 function isPatron(member) {
     return member.roles.cache.has(config.PATREON_ID) || member.roles.cache.has(config.PATREONPLUS_ID);
