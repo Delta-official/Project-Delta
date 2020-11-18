@@ -143,7 +143,7 @@ if (message.content.startsWith(prefix)) {
         message.channel.send(`birb\r${BIRD_LIST[Math.floor(Math.random() * BIRD_LIST.length)]}`)
     }
     if(command === "allowstreamnotify") {
-        if(IsOwner(member)) {
+        if(IsOwner(message.member)) {
         canNotifyStreaming = true
         console.log(canNotifyStreaming)
         message.channel.send("canNotifyStreaming is set to true")
