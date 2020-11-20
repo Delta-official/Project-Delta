@@ -141,7 +141,7 @@ if (message.content.startsWith(prefix)) {
     }
     if(command === "bird" || command === "birb") {
         message.channel.send(`birb\r${BIRD_LIST[Math.floor(Math.random() * BIRD_LIST.length)]}`)
-    }
+    }w
     if(command === "allowstreamnotify") {
         if(IsOwner(message.member)) {
         canNotifyStreaming = true
